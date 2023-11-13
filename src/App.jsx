@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       lms
+      7:26
     </>
   )
 }
