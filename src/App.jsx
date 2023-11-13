@@ -1,4 +1,5 @@
 
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -6,8 +7,9 @@ function App() {
 
   return (
     <>
-      lms
-      7:26
+      <Routes>
+        {/* {<Route path='/' element={<Home />}></Route>} */}
+      </Routes>
     </>
   )
 }
