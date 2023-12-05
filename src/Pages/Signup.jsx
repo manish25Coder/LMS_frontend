@@ -100,7 +100,7 @@ function Signup(){
     return(
         <HomeLayout>
                 <div className="flex items-center justify-center h-screen ">
-                    <form onSubmit={createNewAccount} noValidate className="flex flex-col justify-center gap-3 rounded-lg p-4 text-black mt-6 md:w-96 shadow-2xl">
+                    <form onSubmit={createNewAccount} noValidate className="flex flex-col justify-center gap-3 rounded-lg p-4 text-white mt-6 md:w-96 shadow-[0_0_10px_black]">
                         <h1 className="text-center text-2xl font-bold" >Registration Page</h1>
                         <label htmlFor="image_uploads" className="cursor-pointer">
                             {previewImage ? (<img className="w-24 h-24 rounded-full m-auto" src={previewImage}/>) : (<BsPersonCircle className="w-24 h-24 rounded-full m-auto"/>)}
@@ -149,7 +149,7 @@ function Signup(){
                                     value={signupData.password}
                             />
                         </div>
-                        <button type="submit" className="bg-light py-2 text-lg cursor-pointer  hover:bg-yellow-400 rounded transition-all ease-in-out duration-300">
+                        <button type="submit" className="bg-yellow-600 py-2 text-lg cursor-pointer  hover:bg-yellow-400 rounded transition-all ease-in-out duration-300">
                             Create Account
                         </button>
 
