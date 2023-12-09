@@ -32,9 +32,9 @@ function App() {
         <Route path='/login' element={<Login/>}></Route>
 
 
-        <Route element={<RequireAuth allowedRoles={['ADMIN']} />}>
+        {/* <Route element={<RequireAuth allowedRoles={['ADMIN']} />}> */}
         <Route path='/course/create' element={<CreateCourse/>}></Route>
-        </Route>
+        {/* </Route> */}
 
         <Route path='*' element={<NotFound/>}></Route>
       </Routes>
