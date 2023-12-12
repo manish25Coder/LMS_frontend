@@ -22,7 +22,7 @@ export const getRazorpayId = createAsyncThunk('/razorpay/getId',async()=>{
 
 export const purchaseCourseBundle = createAsyncThunk('/purchaseCourse',async()=>{
     try {
-        const response = await axiosInstance.post('/payments/subscribe');
+        const response = await axiosInstance.post('/payments/subscription');
         console.log(response);
         return response.data
     } catch (error) {
@@ -89,7 +89,7 @@ const razorpaySlice = createSlice({
             state.key = action?.payload?.key;
         })
         .addCase(purchaseCourseBundle.fulfilled,(state,action)=>{
-            console.log(action);
+            // console.log(action ,"Purchase courses");
             state.subscription_id = action?.payload?.subscription_id;
         })
         .addCase(verifyUserPayment.fulfilled,(state,action) => {
