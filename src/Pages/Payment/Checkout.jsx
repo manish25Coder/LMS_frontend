@@ -46,7 +46,7 @@ function Checkout() {
                 toast.success("Payment Successfully")
 
                 const res = await dispatch(verifyUserPayment(paymentDetails));
-                console.log(isPaymentVerified);
+                // console.log(isPaymentVerified);
                 res?.payload?.success ? navigate("/checkout/success") : navigate("/checkout/fail")
             }
         }
