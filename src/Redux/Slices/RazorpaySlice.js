@@ -64,7 +64,7 @@ export const getPaymentRecord = createAsyncThunk('/payments/record',async()=>{
 
 export const cancelCourseBundle = createAsyncThunk('/payments/cancel',async()=>{
     try {
-        const response = await axiosInstance.post('/payments/unsubscribe');
+        const response = axiosInstance.post('/payments/unsubscribe');
         toast.promise(response,{
             loading: "Unsubscribing the Bundle",
             success: (data) => {
