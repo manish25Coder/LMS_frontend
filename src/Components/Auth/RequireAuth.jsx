@@ -1,12 +1,26 @@
 import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 
-function RequireAuth({ allowedRoles}){
-    const {isLoggedIn, role} = useSelector((state) => state.auth);
+function RequireAuth({ allowedRoles }) {
+  const { isLoggedIn, role } = useSelector((state) => state.auth);
 
-    return isLoggedIn && allowedRoles.find((myRole)=> myRole === role) ? (
-    <Outlet/>
-    ) : isLoggedIn ? ( <Navigate to="/denied"/>) : (<Navigate to="login"/>)
+  // 🔐 Not logged in
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // ⏳ Role not loaded yet (page refresh case)
+  if (!role) {
+    return null; // or loader
+  }
+
+  // ❌ Role not allowed
+  if (!allowedRoles.includes(role)) {
+    return <Navigate to="/denied" replace />;
+  }
+
+  // ✅ Authorized
+  return <Outlet />;
 }
 
 export default RequireAuth;
