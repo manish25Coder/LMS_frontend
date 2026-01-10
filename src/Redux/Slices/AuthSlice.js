@@ -98,7 +98,7 @@ export const updateProfile = createAsyncThunk(
   async ({ id, data }, { rejectWithValue }) => {
     try {
       const res = await axioInstance.put(
-        `user/update/${id}`,
+        "user/update",
         data
       );
 
